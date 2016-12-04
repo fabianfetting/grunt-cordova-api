@@ -2,6 +2,7 @@
   "name": "grunt-cordova-api",
   "description": "A grunt task for running cordova commands.",
   "version": "0.2.0",
+  "license": "MIT",
   "homepage": "https://github.com/fur6y/grunt-cordova-api",
   "author": {
     "name": "Fabian Fetting",
