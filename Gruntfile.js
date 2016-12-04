@@ -1,6 +1,6 @@
 /*
  * grunt-cordova-api
- * https://github.com/fabian/grunt-cordova-api
+ * https://github.com/fur6y/grunt-cordova-api
  *
  * Copyright (c) 2016 Fabian Fetting
  * Licensed under the MIT license.
@@ -32,19 +32,19 @@ module.exports = function(grunt) {
     cordova_api: {
       default_options: {
         options: {
+          cmd: 'prepare',
         },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
       },
       custom_options: {
         options: {
-          separator: ': ',
-          punctuation: ' !!!'
+          cmd: 'prepare',
+          platforms: ['ios', 'android'],
+          opts: {
+            debug: true,
+            release: false,
+            device: true,
+          },
         },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
       }
     },
 
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'cordova_api', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'cordova', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
