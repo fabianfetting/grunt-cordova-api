@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         '<%= nodeunit.tests %>'
       ],
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: true
       }
     },
 
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    cordova_api: {
+    cordova: {
       default_options: {
         options: {
           cmd: 'prepare',
